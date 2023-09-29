@@ -1,6 +1,6 @@
 
 .carousel-item img {
-  height: 500px; /* Définissez la hauteur souhaitée ici */
+  height: 400px; /* Définissez la hauteur souhaitée ici */
   object-fit: cover; /* Utilisez object-fit pour redimensionner l'image tout en conservant son aspect */
 }
 
@@ -39,4 +39,8 @@
   height: 200px !important;
   background: 50%/100% 100% no-repeat;
   color: #fff
+}
+.fa {
+  margin-top: 70px;
+  font-size: 100px;
 }

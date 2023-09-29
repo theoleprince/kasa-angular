@@ -4,7 +4,7 @@
 }
 .bg-color-equipement {
   display:flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 .accordion-button {
@@ -38,7 +38,7 @@
   color: #FF6060;
 }
 .color-grid {
-  color: #c5c2c2;
+  color: #b6b4b4;
 }
 .line-height {
   line-height: 1;
@@ -81,4 +81,8 @@
 
 .font-size {
   font-size: 20px;
+}
+
+.position-star {
+  display: inline-block;
 }

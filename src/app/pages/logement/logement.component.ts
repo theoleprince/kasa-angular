@@ -15,14 +15,13 @@ export class LogementComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params.get('id')
-    this.fetchData(id)
+    const id = this.route.snapshot.params.id;
+    this.fetchData(id);
   }
-  async fetchData(id: any) {
+  async fetchData(id: any): Promise<void> {
     this.dataService.getDataById(id).subscribe(response => {
       this.data = response;
-    console.log(response)
+      console.log(response);
     });
-
   }
 }

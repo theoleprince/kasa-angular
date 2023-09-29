@@ -1,1 +1,81 @@
-<p>detail-logement works!</p>
+<div class="mt-3">
+  <div class="row">
+    <div class="col-md-8" align="start">
+      <div class="row">
+        <div class="col-md-12 color-red line-height">
+          <h3>{{logement?.title}}</h3>
+          <span>{{logement?.location}}</span>
+        </div>
+        <div class="col-md-12 content-chips mt-3">
+            <div class="chips" *ngFor="let tag of logement?.tags">
+              {{tag}}
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" align="end">
+      <div class="row">
+        <div class="col-md-12 color-red flex-right">
+          <h5>{{logement?.host.name}}</h5>
+          <div class="rond">
+            <img [src]="logement?.host.picture" [alt]="logement?.host.name" />
+          </div>
+        </div>
+        <div class="col-md-12 mt-4" align="end">
+              <span *ngFor="let tag of ratings" class="position-star">
+                <i *ngIf="tag <= parsInt1(logement?.rating)" class="fa fa-star color-red font-size"></i>
+                <i *ngIf="tag > parsInt1(logement?.rating)" class="fa fa-star color-grid font-size"></i>
+              </span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 row">
+    <div class="col-md-6">
+      <div
+        class="bg-color-equipement accordion-button d-flex justify-content-between align-items-center"
+        data-bs-toggle="collapse"
+        href="#descriptionCollapse"
+        role="button"
+        aria-expanded="false"
+        aria-controls="descriptionCollapse"
+        (click)="handleClick(!inputValue)"
+      >
+        <div>Description</div>
+        <div>
+          <i *ngIf="inputValue" class="fa fa-angle-up"></i>
+          <i *ngIf="!inputValue" class="fa fa-angle-down"></i>
+        </div>
+      </div>
+        <div *ngIf="inputValue" class="collapse show" id="descriptionCollapse">
+          <div class="body-item">{{logement?.description}}</div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+      <div
+        class="bg-color-equipement accordion-button d-flex justify-content-between align-items-center"
+        data-bs-toggle="collapse"
+        href="#equipmentCollapse"
+        role="button"
+        aria-expanded="false"
+        aria-controls="equipmentCollapse"
+        (click)="handleClick2(!inputValue2)"
+      >
+        <div>Equipements</div>
+        <div>
+          <i *ngIf="inputValue2" class="fa fa-angle-up"></i>
+          <i *ngIf="!inputValue2" class="fa fa-angle-down"></i>
+        </div>
+      </div>
+        <div *ngIf="inputValue2" class="collapse show" id="equipmentCollapse">
+          <div class="body-item">
+            <ul class="no-bullet">
+                <li *ngFor="let item of logement?.equipments">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
