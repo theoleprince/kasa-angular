@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.fetchData()
   }
   async fetchData() {
-    await this.dataService.getData().subscribe(response => {
+    this.dataService.getData().subscribe(response => {
       this.data = response;
     console.log(response)
     });

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/_services/Data.service';
 
 @Component({
   selector: 'app-logement',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logement.component.css']
 })
 export class LogementComponent implements OnInit {
+  data: any;
 
-  constructor() { }
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.params.get('id')
+    this.fetchData(id)
   }
+  async fetchData(id: any) {
+    this.dataService.getDataById(id).subscribe(response => {
+      this.data = response;
+    console.log(response)
+    });
 
+  }
 }
