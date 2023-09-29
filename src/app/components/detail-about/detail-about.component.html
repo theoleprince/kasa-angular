@@ -7,14 +7,14 @@
         role="button"
         aria-expanded="false"
         [aria-controls]="'aboutCollapse' + item.id"
-        (click)="toggleAccordion(item.id)"
+        (click)="toggleAccordion(item)"
       >
         <div>{{ item.nom }}</div>
         <div *ngIf="openedAccordions.includes(item.id)">
-            <FontAwesomeIcon icon={faAngleUp} />
+            <i class="fa fa-angle-up"></i>
         </div>
         <div *ngIf="!openedAccordions.includes(item.id)">
-          <FontAwesomeIcon icon={faAngleDown} />
+          <i class="fa fa-angle-down"></i>
         </div>
 
       </div>

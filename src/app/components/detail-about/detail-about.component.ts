@@ -33,11 +33,12 @@ openedAccordions: number[] = [];
 
   ngOnInit(): void {
   }
-  toggleAccordion(about: number) {
-    if(this.openedAccordions.includes(about)) {
-
+  toggleAccordion(about: any) {
+    if(this.openedAccordions.includes(about.id)) {
+      const index = this.abouts.indexOf(about);
+      this.openedAccordions.splice(index, 1);
     } else {
-      this.openedAccordions.push(about)
+      this.openedAccordions.push(about.id)
     }
   }
 }
