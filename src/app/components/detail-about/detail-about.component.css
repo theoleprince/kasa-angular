@@ -1,0 +1,35 @@
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+}
+.bg-color-equipement {
+  display:flex;
+  justify-content: space-between;
+}
+
+.accordion-button {
+  background-color: #FF6060;
+  width: 100%;
+  color: white;
+  height: 52px;
+  border-radius: 10px;
+  text-align: start;
+  border: 1px solid #FF6060;
+}
+
+
+.body-item1 {
+  background-color:#F6F6F6;
+  margin-top: 0px;
+  height: 100px;
+  border-radius: 10px;
+  color: #FF6060;
+  text-align: justify;
+  padding: 25px;
+  line-height: 1.5;
+  margin-bottom: 20px
+}
+
+.align-items-center  {
+  margin-top: 10px !important
+}

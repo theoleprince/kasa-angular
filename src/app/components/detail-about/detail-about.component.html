@@ -1,0 +1,25 @@
+<div class="mt-5 row">
+    <div class="col-md-12" *ngFor="let item of abouts">
+      <div
+        class="bg-color-equipement accordion-button d-flex justify-content-between align-items-center"
+        data-bs-toggle="collapse"
+        [href]="'#aboutCollapse' + item.id"
+        role="button"
+        aria-expanded="false"
+        [aria-controls]="'aboutCollapse' + item.id"
+        (click)="toggleAccordion(item.id)"
+      >
+        <div>{{ item.nom }}</div>
+        <div *ngIf="openedAccordions.includes(item.id)">
+            <FontAwesomeIcon icon={faAngleUp} />
+        </div>
+        <div *ngIf="!openedAccordions.includes(item.id)">
+          <FontAwesomeIcon icon={faAngleDown} />
+        </div>
+
+      </div>
+        <div *ngIf="openedAccordions.includes(item.id)" class="collapse show" [id]="'aboutCollapse' + item.id">
+          <div class="body-item1">{{ item.description }}</div>
+        </div>
+    </div>
+</div>

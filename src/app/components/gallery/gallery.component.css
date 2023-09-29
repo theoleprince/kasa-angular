@@ -1,0 +1,8 @@
+.content-gallery {
+  background: #F6F6F6;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 25px;
+}

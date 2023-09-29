@@ -1,0 +1,9 @@
+<div [routerLink]="'/logement/' + logement.id">
+  <div class="card-body card-dimension card-bg">
+    <img [src]="logement.cover" [alt]="logement.title" class="img" />
+    <div class="titre-card">
+      <h6>{{ logement.title }}</h6>
+      <p>{{ logement.location }}</p>
+    </div>
+  </div>
+</div>
